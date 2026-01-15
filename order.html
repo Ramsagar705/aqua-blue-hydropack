@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Water - Aqua Blue</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo-wrapper">
+                    <div class="logo">
+                        <i class="fas fa-tint"></i>
+                        <span>Aqua Blue</span>
+                    </div>
+                    <div class="logo-subtitle">Hydropack</div>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="order.html" class="active">Order Water</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Order Water</h1>
+            <p>Fill out the form below and we'll deliver fresh water to your doorstep</p>
+        </div>
+    </section>
+
+    <!-- Order Form Section -->
+    <section class="order-section">
+        <div class="container">
+            <div class="order-form-wrapper">
+                <form id="orderForm" class="order-form">
+                    <div class="form-group">
+                        <label for="name">
+                            <i class="fas fa-user"></i> Full Name *
+                        </label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">
+                            <i class="fas fa-phone"></i> Mobile Number *
+                        </label>
+                        <input type="tel" id="mobile" name="mobile" required placeholder="Enter your 10-digit mobile number" pattern="[0-9]{10}">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">
+                            <i class="fas fa-envelope"></i> Email (Optional)
+                        </label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">
+                            <i class="fas fa-map-marker-alt"></i> Delivery Address *
+                        </label>
+                        <textarea id="address" name="address" rows="4" required placeholder="Enter complete delivery address with landmark"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productType">
+                            <i class="fas fa-box"></i> Product Type *
+                        </label>
+                        <select id="productType" name="productType" required>
+                            <option value="">Select a product</option>
+                            <option value="Pani pauch">Pani Pauch</option>
+                            <option value="Bottled Water">Bottled Drinking Water</option>
+                            <option value="Bulk Supply">Bulk Water Supply</option>
+                            <option value="Office Supply">Office & Commercial Supply</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantity">
+                            <i class="fas fa-sort-numeric-up"></i> Quantity *
+                        </label>
+                        <input type="number" id="quantity" name="quantity" required min="1" placeholder="Enter quantity">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deliveryTime">
+                            <i class="fas fa-clock"></i> Preferred Delivery Time *
+                        </label>
+                        <select id="deliveryTime" name="deliveryTime" required>
+                            <option value="">Select preferred time</option>
+                            <option value="Morning (9 AM - 12 PM)">Morning (9 AM - 12 PM)</option>
+                            <option value="Afternoon (12 PM - 4 PM)">Afternoon (12 PM - 4 PM)</option>
+                            <option value="Evening (4 PM - 8 PM)">Evening (4 PM - 8 PM)</option>
+                            <option value="Anytime">Anytime</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="deliveryDate">
+                            <i class="fas fa-calendar"></i> Preferred Delivery Date *
+                        </label>
+                        <input type="date" id="deliveryDate" name="deliveryDate" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="notes">
+                            <i class="fas fa-comment"></i> Additional Notes (Optional)
+                        </label>
+                        <textarea id="notes" name="notes" rows="3" placeholder="Any special instructions or notes"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i> Submit Order
+                    </button>
+                </form>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-message" style="display: none;">
+                    <div class="success-content">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Order Placed Successfully!</h3>
+                        <p>Thank you for your order. We have received your request and will contact you shortly to confirm the delivery details.</p>
+                        <p class="order-id">Order ID: <span id="orderId"></span></p>
+                        <a href="index.html" class="btn btn-primary">Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Aqua Blue</h3>
+                    <p>Your trusted partner for pure drinking water delivery. We ensure quality, hygiene, and convenience.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="order.html">Order Water</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +91 93991 99808</li>
+                        <li><i class="fas fa-envelope"></i> aquabluehydropack@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Paraswara, Pandariya</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Aqua Blue. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/+918643035489?text=Hi, I'd like to order water" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Click to Call Float Button -->
+    <a href="tel:+919399199808" class="call-float">
+        <i class="fas fa-phone"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+    <script src="js/order.js"></script>
+</body>
+</html>
+
